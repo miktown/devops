@@ -3,7 +3,7 @@ EXPOSE 3000
 
 WORKDIR /app
 
-ADD package.json /app
+ADD package.json /app/
 RUN npm i
 
 ADD . /app
