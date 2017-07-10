@@ -8,4 +8,4 @@ dependecies:
 
 test:
   override:
-    -docker run devops npm test
+    - docker run devops npm test
