@@ -2,7 +2,7 @@ machine:
   services:
     - docker
 
-dependecies:
+dependencies:
   override:
     - docker build -t devops .
 
