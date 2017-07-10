@@ -4,7 +4,7 @@ machine:
 
 dependecies:
   override:
-    - docker build -t devops
+    - docker build -t devops .
 
 test:
   override:
