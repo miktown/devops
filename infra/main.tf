@@ -23,7 +23,7 @@ resource "digitalocean_tag" "devops" {
 }
 
 resource "digitalocean_droplet" "devops" {
-  count  = 3
+  count  = 2
   image  = "26667153"
   name   = "devops-v2"
   region = "lon1"
