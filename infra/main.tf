@@ -31,6 +31,14 @@ resource "digitalocean_droplet" "devops" {
   ssh_keys = [1692816]
   tags   = ["${digitalocean_tag.devops.id}"]
 
+  lifecycle {
+  	create_before_destroy = true
+  }
+
+  provisioner "local-exec" {
+  	command = "sleep 160 && curl ${self.ipv4_address}:3000"
+  }
+
   user_data = <<EOF
 #cloud-config
 coreos:
