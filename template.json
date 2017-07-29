@@ -1,0 +1,25 @@
+{
+	"builders": [
+
+		{
+		  "type": "digitalocean",
+		  "api_token": "",
+		  "image": "coreos-stable",
+		  "region": "lon1",
+		  "size": "512mb",
+		  "ssh_username": "core"
+		}
+
+	],
+	"provisioners": [
+		{
+			"type" : "shell",
+			"inline": [
+				"git clone https://github.com/miktown/devops.git",
+				"cd devops",
+				"docker build -t devops .",
+				"docker run -d -p 3000:3000 devops"
+			]
+		}
+	]
+}
